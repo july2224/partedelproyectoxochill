@@ -1,0 +1,23 @@
+Servicio de lista de lecturas
+
+Modelos:
+- reading_lists: id, user_id, name
+- reading_list_books: id, reading_list_id, google_book_id, added_at
+
+Repositorio:
+- getListsByUser(user_id): devuelve todas las listas de un usuario
+- getBooksInList(reading_list_id): devuelve los libros de una lista
+- addBookToList(reading_list_id, google_book_id): agrega un libro a una lista
+- removeBookFromList(reading_list_id, google_book_id): elimina un libro de una lista
+- createList(user_id, name): crea una nueva lista
+- deleteList(reading_list_id): elimina una lista y sus libros
+
+Controlador y rutas:
+GET /reading-list/user/:user_id - Listas de un usuario
+GET /reading-list/:list_id/books - Libros en una lista
+POST /reading-list/:list_id/books - Agregar libro a lista
+DELETE /reading-list/:list_id/books - Eliminar libro de lista
+POST /reading-list/create - Crear lista
+DELETE /reading-list/:list_id - Eliminar lista
+
+Todo es congruente con el frontend y permite manejar varias listas por usuario (por leer, leídos, favoritos, etc.).
